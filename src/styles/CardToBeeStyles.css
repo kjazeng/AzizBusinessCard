@@ -1,0 +1,587 @@
+/* CardToBeeStyles.css */
+
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@500;600&display=swap");
+
+/* Root variables */
+:root {
+  /* Light mode colors */
+  --bg-primary: #fff8e1;
+  --bg-secondary: #fffbee;
+  --text-primary: #4e342e;
+  --text-secondary: #795548;
+  --accent-primary: #ffa000;
+  --accent-secondary: #ffb300;
+  --btn-primary: #ffa000;
+  --btn-hover: #ff8f00;
+  --border-color: #e0e0e0;
+  --honeycomb-color: rgba(255, 160, 0, 0.1);
+
+  /* CardToBee specific variables */
+  --cardtobee-primary: #ffa000;
+  --cardtobee-secondary: #ffb300;
+  --cardtobee-tertiary: #ffc107;
+  --hexagon-size: 100px;
+  --bg-kill: red;
+
+  /* Honeycomb pattern */
+  --honeycomb-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23FFA000' stroke-opacity='0.1' stroke-width='2'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23FFA000' stroke-opacity='0.1' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+/* Dark mode variables */
+.dark-mode {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2c2c2c;
+  --text-primary: #e0e0e0;
+  --text-secondary: #bdbdbd;
+  --accent-primary: #ffb300;
+  --accent-secondary: #ffc107;
+  --btn-primary: #ffb300;
+  --btn-hover: #ffc107;
+  --border-color: #424242;
+  --honeycomb-color: rgba(255, 179, 0, 0.1);
+  --cardtobee-primary: #ffb300;
+  --cardtobee-secondary: #ffc107;
+  --cardtobee-tertiary: #ffd54f;
+
+  /* Dark mode honeycomb pattern */
+  --honeycomb-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23FFB300' stroke-opacity='0.1' stroke-width='2'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23FFB300' stroke-opacity='0.1' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1.1rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.9rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Links */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-secondary);
+}
+
+/* Buttons */
+.btn,
+.bee-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--btn-primary);
+  color: var(--bg-secondary);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover,
+.btn:focus,
+.bee-btn:hover,
+.bee-btn:focus {
+  background-color: var(--btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+/* App Wrapper */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem 0;
+  margin-bottom: 60px; /* Add space for bottom navigation */
+}
+
+/* Hexagon background pattern */
+.app-wrapper::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.1;
+  background-image: var(--honeycomb-pattern);
+  background-size: 100px 100px;
+}
+
+/* CardToBee Logo */
+.cardtobee-logo {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.cardtobee-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Hexagon Card */
+.hexagon-card {
+  width: var(--hexagon-size);
+  height: calc(var(--hexagon-size) * 1.1547);
+  background-color: var(--cardtobee-primary);
+  position: relative;
+  display: inline-block;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon-card:hover {
+  transform: scale(1.05);
+  background-color: var(--cardtobee-secondary);
+}
+
+.hexagon-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--bg-secondary);
+}
+
+/* Honeycomb Grid */
+.honeycomb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.honeycomb-cell {
+  background-color: var(--honeycomb-color);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.honeycomb-cell:hover {
+  transform: scale(1.05);
+  background-color: var(--cardtobee-primary);
+  color: var(--bg-secondary);
+}
+
+/* Card styles */
+.card,
+.bee-card {
+  background-color: var(--bg-secondary);
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid var(--cardtobee-primary);
+}
+
+.card:hover,
+.bee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--cardtobee-secondary);
+}
+
+/* Loader */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.bee-loader {
+  border: 4px solid var(--bg-secondary);
+  border-top: 4px solid var(--cardtobee-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toast notifications */
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast {
+  background-color: var(--cardtobee-primary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Toastify__toast--info {
+  background-color: var(--cardtobee-primary);
+  color: var(--bg-secondary);
+}
+
+.Toastify__toast--success {
+  background-color: #4caf50;
+  color: var(--bg-secondary);
+}
+
+.Toastify__toast--warning {
+  background-color: #ff9800;
+  color: var(--bg-secondary);
+}
+
+.Toastify__toast--error {
+  background-color: #f44336;
+  color: var(--bg-secondary);
+}
+
+.Toastify__close-button {
+  color: var(--text-primary);
+}
+
+.Toastify__progress-bar {
+  background-color: var(--accent-secondary);
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 70px;
+  right: 1rem;
+  background-color: var(--accent-primary);
+  color: var(--bg-secondary);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-mode-toggle:hover,
+.dark-mode-toggle:focus {
+  background-color: var(--accent-secondary);
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Custom scrollbar for WebKit browsers */
+.app-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.app-wrapper::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.app-wrapper::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+.app-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Navigation */
+.nav-container {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  background-color: var(--accent-primary);
+  color: var(--bg-secondary);
+}
+
+/* Mobile-first bottom navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.bottom-nav-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+}
+
+.bottom-nav-item {
+  list-style: none;
+}
+
+.bottom-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.bottom-nav-link i {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.bottom-nav-link:hover,
+.bottom-nav-link:focus,
+.bottom-nav-link.active {
+  color: var(--accent-primary);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 720px;
+    padding: 0 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+  h6 {
+    font-size: 1.1rem;
+  }
+
+  .hexagon-card {
+    --hexagon-size: 120px;
+  }
+
+  .honeycomb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .cardtobee-logo {
+    width: 150px;
+  }
+
+  .nav-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .dark-mode-toggle {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  .bottom-nav {
+    display: none;
+  }
+
+  .main-content {
+    margin-bottom: 0;
+  }
+
+  .footer {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}

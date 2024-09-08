@@ -1,0 +1,124 @@
+/* Default (Light Mode) Styles */
+.terms-agreement-container {
+  background-color: #f5f5f5;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+p a {
+  color: #ffd700; /* CardToBee Gold */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #ffbf00; /* Slightly darker gold on hover */
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.terms-checkbox label {
+  color: #333;
+  font-size: 1rem;
+}
+
+.agree-button {
+  background-color: #ffd700; /* CardToBee Gold */
+  color: #333;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.agree-button:hover {
+  background-color: #ffbf00; /* Darker gold on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Styles */
+.dark-mode .terms-agreement-container {
+  background-color: #333; /* Dark background */
+  color: #f5f5f5; /* Light text */
+}
+
+.dark-mode h2 {
+  color: #ffd700; /* CardToBee Gold */
+}
+
+.dark-mode p {
+  color: #ccc; /* Light gray for text */
+}
+
+.dark-mode p a {
+  color: #ffd700; /* Gold links */
+}
+
+.dark-mode p a:hover {
+  color: #ffbf00;
+}
+
+.dark-mode .terms-checkbox label {
+  color: #f5f5f5; /* Light text for label */
+}
+
+.dark-mode .agree-button {
+  background-color: #ffd700;
+  color: #333;
+}
+
+.dark-mode .agree-button:hover {
+  background-color: #ffbf00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .terms-agreement-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .agree-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}

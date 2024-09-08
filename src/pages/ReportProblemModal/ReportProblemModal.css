@@ -1,0 +1,113 @@
+/* ReportProblemModal.css */
+.report-problem-modal .modal-content {
+  background-color: var(--bg-secondary);
+  border-radius: 15px;
+  border: 2px solid var(--cardtobee-primary);
+}
+
+.report-problem-modal .modal-header {
+  border-bottom: none;
+  padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.report-problem-modal .modal-title {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-primary);
+}
+
+.report-problem-modal .cardtobee-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.report-problem-modal .modal-body {
+  padding: 1.5rem;
+}
+
+.report-problem-modal .form-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.report-problem-modal .form-input {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+.report-problem-modal .form-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: none;
+}
+
+.report-problem-modal .bee-btn {
+  background-color: var(--cardtobee-primary);
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.report-problem-modal .bee-btn:hover,
+.report-problem-modal .bee-btn:focus {
+  background-color: var(--cardtobee-secondary);
+  transform: translateY(-2px);
+}
+
+.report-problem-modal .bee-btn:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+/* Dark mode styles */
+.dark-mode .report-problem-modal .modal-content {
+  background-color: var(--bg-secondary);
+}
+
+.dark-mode .report-problem-modal .form-input {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Mobile-first styles */
+@media (max-width: 767px) {
+  .report-problem-modal .modal-dialog {
+    margin: 0;
+    height: 100%;
+    max-width: 100%;
+  }
+
+  .report-problem-modal .modal-content {
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+
+  .report-problem-modal .modal-header {
+    padding: 1rem;
+  }
+
+  .report-problem-modal .modal-body {
+    padding: 1rem;
+  }
+
+  .report-problem-modal .cardtobee-logo {
+    width: 30px;
+  }
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  .report-problem-modal .modal-dialog {
+    max-width: 500px;
+  }
+}

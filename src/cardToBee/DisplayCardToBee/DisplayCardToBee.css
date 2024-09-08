@@ -1,0 +1,264 @@
+/* DisplayCardToBee.css */
+
+.display-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.honeycomb-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--honeycomb-pattern);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.card {
+  width: 100%;
+  max-width: 350px;
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+
+.card-image-container {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--accent-primary);
+}
+
+.card p {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.card p svg {
+  margin-right: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.title {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.social-links a svg {
+  margin-right: 0.5rem;
+}
+
+.qr-code {
+  align-self: center;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 350px;
+}
+
+.card-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--accent-primary);
+  color: var(--bg-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-actions button:hover {
+  background-color: var(--accent-secondary);
+}
+
+.card-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-actions button svg {
+  margin-right: 0.5rem;
+}
+
+.swipe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swipe-left,
+.swipe-right {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px;
+}
+
+.swipe-left {
+  transform: translateX(-100%);
+}
+
+.swipe-right {
+  transform: translateX(100%);
+}
+
+.display-card-container.swipe-left .swipe-overlay,
+.display-card-container.swipe-right .swipe-overlay {
+  opacity: 1;
+}
+
+.display-card-container.swipe-left .card {
+  transform: translateX(-100%);
+}
+
+.display-card-container.swipe-right .card {
+  transform: translateX(100%);
+}
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 400px;
+    height: 225px;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.875rem;
+  }
+
+  .card-image-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card-actions {
+    max-width: 400px;
+  }
+
+  .card-actions button {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode styles */
+.dark-mode .card-front,
+.dark-mode .card-back {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.dark-mode .card-actions button {
+  background-color: var(--accent-primary);
+  color: var(--bg-secondary);
+}
+
+.dark-mode .card-actions button:hover {
+  background-color: var(--accent-secondary);
+}
+
+.dark-mode .social-links a {
+  color: var(--text-primary);
+}

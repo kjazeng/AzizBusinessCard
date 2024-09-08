@@ -1,0 +1,119 @@
+/* src/pages/Settings/Settings.css */
+
+.settings-container {
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+.settings-container.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.logo-container {
+  margin-bottom: 2rem;
+}
+
+.cardtobee-logo {
+  width: 120px;
+  height: auto;
+}
+
+.settings-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.honeycomb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.honeycomb-cell {
+  background-color: var(--honeycomb-color);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  padding: 1rem;
+}
+
+.honeycomb-cell:hover {
+  transform: scale(1.05);
+  background-color: var(--cardtobee-primary);
+}
+
+.honeycomb-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-primary);
+}
+
+.settings-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.delete-account {
+  background-color: var(--bg-kill);
+  color: var(--bg-secondary);
+}
+
+.delete-account:hover {
+  background-color: var(--accent-secondary);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 90%;
+  width: 400px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.copyright {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+@media (min-width: 768px) {
+  .honeycomb-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

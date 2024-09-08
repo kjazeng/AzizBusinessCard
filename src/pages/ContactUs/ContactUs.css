@@ -1,0 +1,157 @@
+/* ContactUs.css */
+.contact-us-container {
+  position: relative;
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff8e1;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.honeycomb-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+      30deg,
+      #ffa000 0px,
+      #ffa000 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      150deg,
+      #ffa000 0px,
+      #ffa000 1px,
+      transparent 1px,
+      transparent 60px
+    );
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #ffa000;
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+p {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info-list li {
+  font-size: 20px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon {
+  margin-right: 15px;
+  color: #ffa000;
+  font-size: 24px;
+}
+
+a {
+  color: #ffa000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff6f00;
+  text-decoration: underline;
+}
+
+/* Dark mode styles */
+.dark-mode .contact-us-container {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .content {
+  background-color: rgba(51, 51, 51, 0.9);
+}
+
+.dark-mode h2 {
+  color: #ffd54f;
+}
+
+.dark-mode p {
+  color: #e0e0e0;
+}
+
+.dark-mode .contact-info-list li {
+  color: #e0e0e0;
+}
+
+.dark-mode .contact-icon {
+  color: #ffd54f;
+}
+
+.dark-mode a {
+  color: #ffd54f;
+}
+
+.dark-mode a:hover {
+  color: #ffecb3;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .contact-us-container {
+    padding: 20px;
+  }
+
+  .content {
+    padding: 30px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .contact-info-list li {
+    font-size: 18px;
+  }
+}

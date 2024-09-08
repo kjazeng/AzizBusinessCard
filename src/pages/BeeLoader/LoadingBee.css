@@ -1,0 +1,101 @@
+/* BeeLoader.css */
+.bee-loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.honeycomb {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  transform: rotate(30deg);
+}
+
+.comb {
+  width: 50px;
+  height: 50px;
+  background-color: var(--honeycomb-color);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  animation: pulse 2s infinite alternate;
+}
+
+.loader-content {
+  z-index: 1;
+  text-align: center;
+}
+
+.flying-bee {
+  width: 80px;
+  height: auto;
+  animation: fly 3s ease-in-out infinite;
+}
+
+h3 {
+  margin-top: 1rem;
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fly {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode styles */
+.dark-mode .bee-loader-container {
+  background-color: var(--bg-primary);
+}
+
+.dark-mode .comb {
+  background-color: var(--honeycomb-color);
+}
+
+.dark-mode h3 {
+  color: var(--text-primary);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .honeycomb {
+    width: 300px;
+    height: 300px;
+  }
+
+  .comb {
+    width: 75px;
+    height: 75px;
+  }
+
+  .flying-bee {
+    width: 100px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}

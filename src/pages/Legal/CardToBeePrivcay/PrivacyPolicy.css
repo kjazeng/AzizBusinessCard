@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap");
+
+/* Container Styling */
+.privacy-container {
+  padding: 40px 20px;
+  background-color: #f5f5f5; /* Hive Yellow */
+  border: 2px solid #ffc107; /* Honey Gold */
+  box-shadow: 2px 2px 5px #333333; /* Bee Black shadow */
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+}
+
+/* Dark Mode Support for Container */
+body.dark-mode .privacy-container {
+  background-color: #444444;
+  border-color: #ffeb3b; /* Hive Yellow in Dark Mode */
+  color: #f5f5f5;
+  box-shadow: 2px 2px 5px #000000;
+}
+
+/* Heading Styles */
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #ffc107; /* Honey Gold */
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #ff9800; /* Nectar Orange */
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 20px;
+  color: #ff9800; /* Nectar Orange */
+}
+
+/* Dark Mode for Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffeb3b; /* Hive Yellow */
+}
+
+/* Text and Paragraph Styles */
+p {
+  font-size: 16px;
+  color: #333333; /* Bee Black */
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* Dark Mode for Paragraphs */
+body.dark-mode p {
+  color: #f5f5f5;
+}
+
+/* List Styling */
+ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+ul li strong {
+  color: #ffc107; /* Honey Gold for emphasized text */
+}
+
+body.dark-mode ul li {
+  color: #f5f5f5;
+}
+
+/* Dark Mode List Styling */
+body.dark-mode ul li strong {
+  color: #ffeb3b; /* Hive Yellow in dark mode */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p,
+  ul li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p,
+  ul li {
+    font-size: 12px;
+  }
+}

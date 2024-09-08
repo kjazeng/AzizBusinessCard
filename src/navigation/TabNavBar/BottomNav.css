@@ -1,0 +1,111 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.bottom-nav-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.bottom-nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.bottom-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.bottom-nav-icon {
+  font-size: 1.25rem;
+  margin-bottom: 0.2rem;
+  transition: all 0.3s ease;
+}
+
+.bottom-nav-text {
+  font-size: 0.65rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.bottom-nav-link:hover,
+.bottom-nav-link:focus,
+.bottom-nav-link.active {
+  color: var(--accent-primary);
+  background-color: var(--honeycomb-color);
+}
+
+.bottom-nav-link:hover .bottom-nav-icon,
+.bottom-nav-link:focus .bottom-nav-icon,
+.bottom-nav-link.active .bottom-nav-icon {
+  transform: scale(1.1);
+}
+
+.sign-in-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Dark mode styles */
+.dark-mode .bottom-nav {
+  background-color: var(--bg-secondary);
+}
+
+.dark-mode .bottom-nav-link {
+  color: var(--text-primary);
+}
+
+.dark-mode .bottom-nav-link:hover,
+.dark-mode .bottom-nav-link:focus,
+.dark-mode .bottom-nav-link.active {
+  color: var(--accent-primary);
+  background-color: var(--honeycomb-color);
+}
+
+/* Hide on large screens */
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+/* Accessibility */
+.bottom-nav-link:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.bottom-nav-link:active .bottom-nav-icon {
+  animation: bounce 0.3s ease;
+}

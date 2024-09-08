@@ -1,0 +1,63 @@
+/* Light Mode Styles */
+.retro-button {
+  background-color: #ffc107; /* Honey Gold for CardToBee style */
+  color: #333333; /* Bee Black */
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.retro-button:hover {
+  background-color: #ffeb3b; /* Lighter Hive Yellow */
+  transform: scale(1.05);
+}
+
+.retro-button:active {
+  background-color: #ffc107;
+  transform: scale(1);
+}
+
+.retro-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .retro-button {
+  background-color: #555555; /* Dark Gray */
+  color: #ffffff; /* White */
+}
+
+body.dark-mode .retro-button:hover {
+  background-color: #777777; /* Lighter Gray */
+}
+
+body.dark-mode .retro-button:active {
+  background-color: #666666;
+}
+
+body.dark-mode .retro-button:disabled {
+  background-color: #333333;
+}
+
+/* Toast Styles */
+.toast-success {
+  background-color: #34a853; /* Green for success */
+}
+
+.toast-error {
+  background-color: #ea4335; /* Red for error */
+}
+
+/* Dark Mode Toast */
+body.dark-mode .toast-success {
+  background-color: #228b22; /* Darker green */
+}
+
+body.dark-mode .toast-error {
+  background-color: #8b0000; /* Darker red */
+}

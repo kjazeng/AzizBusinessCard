@@ -1,0 +1,128 @@
+/* NotFound.css */
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.honeycomb-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--honeycomb-pattern);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.content-wrapper {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.cardtobee-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.error-code {
+  font-size: 4rem;
+  color: var(--cardtobee-primary);
+  margin-bottom: 1rem;
+}
+
+.hexagon-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.hexagon {
+  width: 200px;
+  height: 173.2px;
+  background-color: var(--cardtobee-primary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.error-title {
+  color: var(--cardtobee-primary);
+}
+.error-message {
+  color: var(--bg-secondary);
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.error-instruction {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.bee-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--btn-primary);
+  color: var(--bg-secondary);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.bee-btn:hover,
+.bee-btn:focus {
+  background-color: var(--btn-hover);
+  transform: translateY(-2px);
+}
+
+/* Dark mode styles */
+.dark-mode .content-wrapper {
+  background-color: var(--bg-secondary);
+}
+
+.dark-mode .error-code {
+  color: var(--cardtobee-primary);
+}
+
+.dark-mode .hexagon {
+  background-color: var(--cardtobee-primary);
+}
+
+.dark-mode .error-message {
+  color: var(--bg-secondary);
+}
+
+.dark-mode .error-instruction {
+  color: var(--text-secondary);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .content-wrapper {
+    padding: 3rem;
+  }
+
+  .error-code {
+    font-size: 5rem;
+  }
+
+  .hexagon {
+    width: 240px;
+    height: 207.8px;
+  }
+}

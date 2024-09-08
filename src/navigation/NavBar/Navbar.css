@@ -1,0 +1,191 @@
+/* Navbar.css */
+.navbar {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.logo-style {
+  width: 40px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.brand-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.menu-toggle span {
+  width: 2rem;
+  height: 0.25rem;
+  background: var(--text-primary);
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.menu-toggle.active span:first-child {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg-secondary);
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-items li {
+  margin: 1rem 0;
+}
+
+.nav-link {
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s linear;
+}
+
+.nav-link:hover {
+  color: var(--accent-primary);
+}
+
+.logout-btn,
+.login-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  color: var(--text-primary);
+  transition: color 0.3s linear;
+}
+
+.logout-btn:hover,
+.login-btn:hover {
+  color: var(--accent-primary);
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu {
+    position: relative;
+    transform: translateX(0);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: transparent;
+    padding: 0;
+  }
+
+  .menu-items {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-items li {
+    margin: 0 1rem;
+  }
+
+  .nav-link,
+  .logout-btn,
+  .login-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+/* Dark mode styles */
+.dark-mode .navbar {
+  background-color: var(--bg-primary);
+}
+
+.dark-mode .menu-toggle span {
+  background: var(--text-primary);
+}
+
+.dark-mode .menu {
+  background: var(--bg-primary);
+}
+
+.dark-mode .nav-link,
+.dark-mode .logout-btn,
+.dark-mode .login-btn {
+  color: var(--text-primary);
+}
+
+.dark-mode .nav-link:hover,
+.dark-mode .logout-btn:hover,
+.dark-mode .login-btn:hover {
+  color: var(--accent-primary);
+}
